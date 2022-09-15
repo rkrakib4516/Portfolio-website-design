@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #030303;
+}
+nav{
+  background: #1b1b1b;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav .logo{
+  float: left;
+  color: white;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+}
+nav ul{
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+}
+nav ul li{
+  float: left;
+  display: inline-block;
+  background: #1b1b1b;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+}
+nav ul li a:hover{
+  color: cyan;
+  border-radius: 5px;
+  box-shadow:  0 0 5px #33ffff,
+               0 0 10px #66ffff;
+}
+nav ul ul li a:hover{
+  box-shadow: none;
+}
+nav ul ul{
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+nav ul ul ul{
+  border-top: none;
+}
+nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+nav ul ul li a{
+  line-height: 50px;
+}
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,input{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
+}
+@media all and (max-width: 968px) {
+  nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+  nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul{
+    display: none;
+  }
+  nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+  nav ul li a:hover{
+    box-shadow: none;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: cyan;
+  }
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul a{
+    padding-left: 40px;
+  }
+  nav ul ul ul a{
+    padding-left: 80px;
+  }
+  nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  nav ul ul li{
+    border-bottom: 0px;
+  }
+  span.cancel:before{
+    content: '\f00d';
+  }
+}
+.content{
+  width: 100%;
+  height: 100%;
+  background-image: url(images/thumbnail0.png);
+  border-bottom-right-radius: 100px;
+
+}
+
+
+.text-box{
+  padding-left: 10%;
+  padding-top: 10%;
+  padding-bottom: 20%;
+	font-size: 17px;
+	letter-spacing: 1px;
+	line-height: 26px;
+  height: auto;
+  width: auto;
+}
+.text-box h1{
+	font-size: 60px;
+	line-height: 100px;
+  color: #fff;
+	
+}
+.text-box h1 .auto-input{
+	color: #fff724;
+}
+.texts{
+  color:#fff;
+  width: 600px;
+}
+
+.text-box a{
+	margin-top: 30px;
+	display: inline-block;
+	border-radius: 6px;
+	border: 2px solid #fff724;
+	color: #fff724;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+.text-box .btnx{
+	background: #fff724;
+	color: #000;
+	margin-left: 10px;
+	font-weight: 600px;
+}
+
+
+/* === Google Font Import - Poppins === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+section{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #030303;
+}
+
+.swiper{
+  width: 1050px;
+}
+
+.card{
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: #7d2ae8;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+section .card .image{
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #7d2ae8;
+}
+
+section .card .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.card .media-icons{
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card .media-icons i{
+  color: #fff;
+  opacity: 0.6;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card .media-icons i:hover{
+  opacity: 1;
+}
+
+.card .name-profession{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+ 
+} 
+
+.name-profession .name{
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name-profession .profession{
+  font-size:15px;
+  font-weight: 500;
+}
+
+.card .rating{
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.card .rating i{
+  font-size: 18px;
+  margin: 0 2px;
+  color: #7d2ae8;
+}
+
+.card .button{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card .button button{
+  background: #7d2ae8;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button button:hover{
+  background: #6616d0;
+}
+
+.swiper-pagination{
+  position: absolute;
+}
+
+.swiper-pagination-bullet{
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: #7d2ae8;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  opacity: 0.7;
+  color: #7d2ae8;
+  transition: all 0.3s ease;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  opacity: 1;
+  color: #7d2ae8;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.contents{
+  max-width: 1090px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+ .contents .cards{
+  background: #fff;
+  width: calc(33% - 20px);
+  text-align: center;
+  padding: 15px 30px  30px 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.contents .cards .top{
+  height: 130px;
+  color: #fff;
+  padding: 12px 0 0 0 ;
+  clip-path: polygon(0 0, 100% 0, 100% 53%, 49% 100%, 0 53%);
+}
+
+.contents .cards .top .title{
+ font-size: 27px;
+ font-weight: 600;
+}
+.contents .cards .top .price-sec{
+  margin-top: -10px;
+  font-weight: 600;
+}
+.contents .cards .top .price{
+  font-size: 45px;
+}
+.contents .cards .info{
+  font-size: 16px;
+  margin-top: 20px;
+}
+.contents .cards .details .one{
+  margin-top: 25px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.contents .cards .details .one::before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  background: #ddd;
+  height: 1px;
+  left: 0;
+  top: -12px;
+  border-radius: 25px;
+}
+.contents .cards .details .one i{
+  color: #2db94d;
+}
+.contents .cards .details i.fa-times{
+  color: #cd3241;
+}
+.contents .cards button{
+  outline: none;
+  border: none;
+  height: 42px;
+  color: #fff;
+  margin-top: 30px;
+  border-radius: 3px;
+  font-size: 18px;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.contents .one .top,
+.contents .one button{
+  background: #14eb6e;
+}
+.contents .two .top,
+.contents .two button{
+  background: #e87130;
+}
+.contents .three .top,
+.contents .three button{
+  background: #11BCC3;
+}
+.contents button:hover {
+  filter: brightness(90%);
+}
+.contents .one ::selection{
+background: #8af5b6;
+}
+.contents .two ::selection{
+background:  #f2b08c;
+}
+.contents .three ::selection{
+background: #d0f9fb;
+}
+@media (max-width:1000px) {
+   .contents .cards{
+    background: #fff;
+    width: calc(50% - 20px);
+    margin-bottom: 30px;
+}
+}
+@media (max-width:715px) {
+ .contents .cards{
+    width: 100%;
+}
+}
+
+
+
+
+
+.skilltext{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+}
+.skill{
+  font-size: 60px;
+  color: rgb(255, 231, 14);
+  font-family: serif;
+  text-align: center;
+  padding: 30px;
+
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.wrapper{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+.wrapper .card{
+  background: #ffffff;
+  width: calc(31%);
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+
+}
+.wrapper .card .circle{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  cursor: default;
+}
+.card .circle .box,
+.card .circle .box span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.card .circle .box{
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: all 0.2s;
+}
+.card .circle:hover .box{
+  transform: translate(-50%, -50%) scale(0.91);
+}
+.card .circle .box span,
+.wrapper .card .text{
+  background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.circle .box span{
+  font-size: 38px;
+  font-family: sans-serif;
+  font-weight: 600;
+  transform: translate(-45%, -45%);
+  transition: all 0.1s;
+}
+.card .circle:hover .box span{
+  transform: translate(-45%, -45%) scale(1.09);
+}
+.card .text{
+  font-size: 20px;
+  font-weight: 600;
+}
+@media(max-width: 753px){
+  .wrapper{
+    max-width: 700px;
+  }
+  .wrapper .card{
+    width: calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+}
+@media(max-width: 505px){
+  .wrapper{
+    max-width: 500px;
+  }
+  .wrapper .card{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+footer{
+	width: 100%;
+	position: absolute;
+	background: linear-gradient(to right,#00093c,#2d0b00);
+	color: #fff;
+	padding: 50px 0 30px;
+	border-top-left-radius: 125px;
+	line-height: 20px;
+	margin-top: 30px;
+}
+.row{
+	width: 85%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+
+}
+.col{
+	flex-basis: 25%;
+	padding: 10px;
+  color:#fff;
+}
+.col:nth-child(2),.col:nth-child(3){
+	flex-basis: 15%;
+}
+.col h3{width: fit-content;
+	margin-bottom: 40px;
+	position: relative;
+}
+.col p{
+  font-size: 15px;
+}
+.email-id{width: fit-content;
+	border-bottom: 1px solid #ccc;
+	margin: 20px 0;
+}
+.col ul li{
+	list-style: none;
+	margin-bottom: 12px;
+
+}
+.col ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+form{
+	padding-bottom: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 50px;
+}
+form .fas{
+	font-size: 18px;
+	margin-right: 10px;
+}
+form input{
+	width: 100%;
+	background: transparent;
+	color: #fff;
+	border: 0;
+	outline: none;
+}
+form button{
+	background: transparent;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+
+}
+form button .fas{
+	font-size: 16px;
+	color: #ccc;
+}
+.social-icons .fab{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: #000;
+	background: #fff;
+	margin-right: 15px;
+	cursor: pointer;
+}
+hr{
+	width: 90%;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	margin: 20px auto;	
+}
+.copyright{
+	text-align: center;
+  font-size: 15px;
+}
+.underline{
+	width: 100%;
+	height: 5px;
+	background: #767676;
+	border-radius: 3px;
+	position: absolute;
+	top: 25px;
+	left: 0;
+	overflow: hidden;	
+}
+.underline span{
+	width: 15px;
+	height: 100%;
+	background: #fff;
+	border-radius: 3px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	animation: moving 2s linear infinite;
+
+}
+@keyframes moving{
+	0%{
+		left: -20px;
+	}
+100%{
+		left: 100%;
+	}
+}
+@media (max-width:700px){
+	footer{
+		bottom: unset;
+	}
+	.col{
+		flex-basis: 100%;
+		
+	}
+	.col:nth-child(2),.col:nth-child(3){
+		flex-basis: 100%;
+	}
+}
